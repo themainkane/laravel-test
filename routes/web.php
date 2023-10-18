@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AwardController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\IndexController;
@@ -26,3 +27,5 @@ Route::get('/movies/shawshank-redemtion', [MovieController::class, 'shawshank'])
 Route::get('/top-rated-games', [GameController::class, 'topRated']);
 
 Route::get('/awards', [AwardController::class, 'index']);
+
+Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
