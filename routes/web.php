@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AwardController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -16,13 +15,12 @@ use App\Http\Controllers\MovieController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/movies', [MovieController::class, 'index']);
 
 Route::get('/worst-rated-movies', [MovieController::class, 'worstRated']);
 
 Route::get('/movies/shawshank-redemtion', [MovieController::class, 'shawshank']);
 
 Route::get('/top-rated-games', [GameController::class, 'topRated']);
-
-Route::get('/awards', [AwardController::class, 'index']);
