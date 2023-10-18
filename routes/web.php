@@ -17,8 +17,9 @@ use App\Http\Controllers\MovieController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/movies', [MovieController::class, 'index']);
 
 Route::get('/worst-rated-movies', [MovieController::class, 'worstRated']);
 

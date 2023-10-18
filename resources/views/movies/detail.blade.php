@@ -14,8 +14,11 @@
     <h3>Rating:
         <?= $shawshank[0]->rating; ?>
     </h3>
-    <h3>Run time: </h3>
-    <?= $shawshank[0]->rating; ?>
+    <h3>Run time: 
+    <?= $shawshank[0]->length; ?>
+    </h3>
+    <h2>Cast and crew</h2>
+
 </body>
 
 </html>
