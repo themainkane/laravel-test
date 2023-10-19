@@ -10,16 +10,27 @@ class GameController extends Controller
 {
     public function topRated()
     {
-        $games = Movie::where('movie_type_id', 7)
+        $top_games = Movie::where('movie_type_id', 7)
             ->orderBy('rating', 'desc')
             ->limit(10)
             ->get();
 
         return view(
-            'games.top-rated',
+            'games.top-rated-games',
             compact(
-                'games'
+                'top_games'
             )
         );
+    }
+
+    public function worstRated()
+    {
+        $worst_games = Movie::where('movie_type_id', 7)
+            ->orderBy('rating', 'asc')
+            ->limit(10)
+            ->get();
+
+        return view('games.worst-rated', compact($worst_games));
+
     }
 }

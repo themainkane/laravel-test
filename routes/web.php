@@ -19,13 +19,13 @@ use App\Http\Controllers\MovieController;
 */
 Route::get('/', [IndexController::class, 'index']);
 
-Route::get('/movies', [MovieController::class, 'index']);
+Route::get('/movies', [MovieController::class, 'topRated'])->name('movie.top-rated-movies');
 
-Route::get('/worst-rated-movies', [MovieController::class, 'worstRated']);
+Route::get('/worst-rated-movies', [MovieController::class, 'worstRated'])->name('movie.worst-rated-movies');
 
-Route::get('/movies/shawshank-redemtion', [MovieController::class, 'shawshank']);
+Route::get('/movies/{movie_id}', [MovieController::class, 'details'])->whereNumber('movie_id')->name('movie.details');
 
-Route::get('/top-rated-games', [GameController::class, 'topRated']);
+Route::get('/top-rated-games', [GameController::class, 'topRated'])->name('games.top-rated-games');
 
 Route::get('/awards', [AwardController::class, 'index']);
 

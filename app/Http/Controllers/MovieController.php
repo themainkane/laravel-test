@@ -8,18 +8,18 @@ use App\Models\Movie;
 
 class MovieController extends Controller
 {
-    public function index()
+    public function topRated()
     {
-        $movies = Movie::where('votes_nr', '>', 5000)
+        $top_movies = Movie::where('votes_nr', '>', 5000)
             ->where('movie_type_id', 1)
             ->orderBy('rating', 'desc')
             ->limit(10)
             ->get();
 
         return view(
-            'movies.index',
+            'movies.top-rated-movies',
             compact(
-                'movies'
+                'top_movies'
             )
         );
 
@@ -43,16 +43,18 @@ class MovieController extends Controller
 
     }
 
-    public function shawshank()
+    public function details($movie_id)
     {
-        $shawshank = Movie::where('id', '111161')
-            ->limit(1)
-            ->get();
+        $movie = Movie::findOrFail($movie_id);
+        // $details = Movie::query()
+        //     ->where('id', $movie_id)
+        //     ->limit(1)
+        //     ->get();
 
         return view(
-            'movies.detail',
+            'movies.details',
             compact(
-                'shawshank'
+                'movie'
             )
 
         );

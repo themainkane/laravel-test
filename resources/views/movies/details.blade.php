@@ -8,14 +8,16 @@
 </head>
 
 <body>
+    @include('components.nav');
+
     <h1>Spotlight:
-        <?= $shawshank[0]->name; ?>
+        <?= $movie->name; ?>
     </h1>
     <h3>Rating:
-        <?= $shawshank[0]->rating; ?>
+        <?= $movie->rating; ?>
     </h3>
     <h3>Run time: 
-    <?= $shawshank[0]->length; ?>
+    <?= $movie->length; ?>
     </h3>
     <h2>Cast and crew</h2>
 
